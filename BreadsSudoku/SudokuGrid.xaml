@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="BreadsSudoku.SudokuGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:BreadsSudoku"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance local:SudokuGridViewModel}"
+             d:DesignHeight="300" d:DesignWidth="300" Background="Bisque">
+
+    <UniformGrid Rows="3" Columns="3" MinHeight="200" MinWidth="200">
+        <local:RegionView  DataContext="{Binding Region00}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <local:RegionView  DataContext="{Binding Region01}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <local:RegionView  DataContext="{Binding Region02}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <local:RegionView  DataContext="{Binding Region10}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <local:RegionView  DataContext="{Binding Region11}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <local:RegionView  DataContext="{Binding Region12}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <local:RegionView  DataContext="{Binding Region20}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <local:RegionView  DataContext="{Binding Region21}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        <local:RegionView  DataContext="{Binding Region22}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+    </UniformGrid>
+</UserControl>

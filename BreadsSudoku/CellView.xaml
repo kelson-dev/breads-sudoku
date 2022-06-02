@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="BreadsSudoku.CellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:BreadsSudoku"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance local:CellViewModel}"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="{x:Null}" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="MinWidth" Value="16" />
+            <Setter Property="MinHeight" Value="16" />
+            <Setter Property="Foreground" Value="Gray" />
+            <Setter Property="Background" Value="#60202020" />
+            <Setter Property="FontSize" Value="16" />
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.BorderThickness" Value="0" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <UniformGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Rows="3" Columns="3">
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option00}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="1" Content="1"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option01}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="2" Content="2"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option02}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="3" Content="3"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option10}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="4" Content="4"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option11}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="5" Content="5"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option12}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="6" Content="6"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option20}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="7" Content="7"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option21}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="8" Content="8"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+            <Button
+                Margin="1"
+                
+                Visibility="{Binding Option22}"
+                Command="{Binding CellSelectedCommand}" CommandParameter="9" Content="9"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </UniformGrid>
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding NumberVisible}" Fill="White"/>
+        <Viewbox Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding NumberVisible}">
+            <Label Content="{Binding SelectedValueText}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </Viewbox>
+    </Grid>
+</UserControl>
